@@ -6,6 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Класс, в котором начинается работа программы и запускается метод start
+ * для запуска главного окна программы на JavaFX.
+ *
+ * @author Трушенков Дмитрий 15ИТ18
+ */
 public class Main extends Application {
 
     @Override
