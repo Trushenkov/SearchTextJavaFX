@@ -7,15 +7,15 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * Класс, в котором начинается работа программы и запускается метод start
- * для запуска главного окна программы на JavaFX.
+ * Класс, в котором с помощью JavaFX реализован ввод текста для поиска, выбор стартового
+ * каталога для поиска, и запуск поиска текста в текствовых файлах файловой системы.
  *
  * @author Трушенков Дмитрий 15ИТ18
  */
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Поиск текста в текстовых файлах файловой системы");
         primaryStage.setResizable(false);
