@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 /**
  * Класс, в котором с помощью JavaFX реализован ввод текста для поиска, выбор стартового
- * каталога для поиска, и запуск поиска текста в текствовых файлах файловой системы.
+ * каталога для поиска, и запуск поиска текста в текстовых файлах файловой системы.
  *
  * @author Трушенков Дмитрий 15ИТ18
  */
@@ -19,7 +19,7 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Поиск текста в текстовых файлах файловой системы");
         primaryStage.setResizable(false);
-        primaryStage.setScene(new Scene(root, 360, 315));
+        primaryStage.setScene(new Scene(root, 276, 350));
         primaryStage.show();
     }
 
