@@ -40,9 +40,9 @@ public class Controller {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(result_file)))) {
 
             if (bufferedReader.read() == -1) {
-                status.setText("Результирующий файл пуст. Ничего не найдено.");
+                status.setText("Результирующий файл пуст.\nНичего не найдено.");
             } else {
-                status.setText("Поиск успешно выполнен, откройте результирующий\n файл. Путь: SearchTextInFiles/src/sample/result.txt");
+                status.setText("Поиск выполнен. Откройте result.txt\nПуть: SearchTextInFiles/src/sample/result.txt");
             }
 
         } catch (IOException e) {
