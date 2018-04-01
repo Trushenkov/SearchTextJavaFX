@@ -5,6 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
+
 import java.io.*;
 
 /**
@@ -32,12 +33,9 @@ public class Controller {
      * Обработка события при нажатии кнопки "Start search".
      */
     public void start_search() {
-        try {
-            SearchFilesAndText.main(startDirectory, String.valueOf(inputMessage.getCharacters()));
-        } catch ( IOException e) {
-                e.printStackTrace();
-        }
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(result_file)))) {
+
+            SearchFilesAndText.main(startDirectory, String.valueOf(inputMessage.getCharacters()));
 
             if (bufferedReader.read() == -1) {
                 status.setText("Результирующий файл пуст.\nНичего не найдено.");
