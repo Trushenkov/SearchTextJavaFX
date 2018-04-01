@@ -29,8 +29,8 @@ public class SearchFilesAndText extends Thread {
     }
 
     /**
-     * Метод для записи информации о найденной строчке в текстовый файл.
-     * Информация в виде:
+     * Метод для записи информации о найденном тексте в текстовый файл.
+     * Информация записывается в виде:
      * 1. путь к файлу; 2.сообщение, которое нужно было найти; 3. номер строки, в которой найдено сообщение.
      *
      * @param str информация, которую нужно записать в текстовый файл
@@ -44,15 +44,13 @@ public class SearchFilesAndText extends Thread {
     }
 
     /**
-     * Метод для поиска текстовых файлов в файловой системе,
-     * согласно шаблону регулярного выражения, начиная
-     * с заданного каталога и запуска потока для поиска
-     * заданного текста в найденных файлах.
+     * Метод для поиска текстовых файлов в файловой системе и
+     * запуска потока для поиска заданного текста в найденных файлах.
      *
      * @param pathDirectory    путь начальной директории
-     * @param messageForSearch сообщение для поиска
+     * @param messageForSearch текст для поиска
      */
-    private static void fileExplorer(File pathDirectory, String messageForSearch) {
+    private static void findTxtFiles(File pathDirectory, String messageForSearch) {
         try {
             File[] files = pathDirectory.listFiles();
             assert files != null;
@@ -64,7 +62,7 @@ public class SearchFilesAndText extends Thread {
                     numberOfThread++;
 
                 } else if (file.isDirectory()) {
-                    fileExplorer(file, messageForSearch);
+                    findTxtFiles(file, messageForSearch);
                 }
             }
         } catch (NullPointerException e) {
@@ -95,8 +93,8 @@ public class SearchFilesAndText extends Thread {
     }
 
     /**
-     * Метод, в котором запускается fileExplorer() - метод для  поиска текстовых файлов и ожидания
-     * завершения потоков поиска текста в txt-файле и записи результата в result.txt
+     * Метод для начала поиска текстовых файлов, а также для вызова метода для ожидания
+     * завершения потоков поиска текста в текстовом файле.
      *
      * @param path    путь начальной директории
      * @param message сообщение для поиска
@@ -107,17 +105,16 @@ public class SearchFilesAndText extends Thread {
 
         arrayListOfThreads = new ArrayList<>();
 
-        fileExplorer(path, message);
+        findTxtFiles(path, message);
 
         waitForDieThreads(arrayListOfThreads);
 
-        result.close();
     }
 
     /**
      * Метод для ожидания, пока потоки, которые ищут сообщение в текстовых файлах, завершат свое выполнение.
      *
-     * @param searchMessagesList arraylist, содерщащий потоки для поиска текста в файлах файловой системы.
+     * @param searchMessagesList arraylist, содерщащий потоки для поиска текста в текстовых файлах
      */
     private static void waitForDieThreads(ArrayList<SearchFilesAndText> searchMessagesList) {
         try {
