@@ -11,7 +11,7 @@
 ![Screenshot](https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/image.PNG)<br>
 ## Репозиторий содержит:
 ### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/sample.fxml">sample.fxml</a>
-Файл разметки для определения пользовательского интерфейса приложения JavaFX. <br>
+Файл разметки пользовательского интерфейса приложения JavaFX. <br>
 ### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/Controller.java"> Controller.java </a> 
 Класс, в котором обрабатываются события взаимодействия пользователя и интерфейса программы <br>
 ### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/Main.java"> Main.java </a> 
