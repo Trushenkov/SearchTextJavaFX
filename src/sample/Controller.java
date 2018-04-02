@@ -35,7 +35,7 @@ public class Controller {
     public void start_search() {
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(new File(result_file)))) {
 
-            SearchFilesAndText.main(startDirectory, String.valueOf(inputMessage.getCharacters()));
+            SearchTextAndWrite.main(startDirectory, String.valueOf(inputMessage.getCharacters()));
 
             if (bufferedReader.read() == -1) {
                 status.setText("Результирующий файл пуст.\nНичего не найдено.");
