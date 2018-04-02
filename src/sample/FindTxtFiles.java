@@ -14,8 +14,9 @@ public class FindTxtFiles {
      * Метод для поиска текстовых файлов в файловой системе и
      * запуска потока для поиска заданного текста в найденных файлах.
      *
-     * @param pathDirectory    путь начальной директории
-     * @param messageForSearch текст для поиска
+     * @param pathDirectory     путь начальной директории
+     * @param messageForSearch  текст для поиска
+     * @return arrayList        arrayList, содержащий потоки для поиска текста в файлах txt
      */
     public static ArrayList findFiles(File pathDirectory, String messageForSearch) {
         ArrayList<SearchFilesAndText> arrayList = new ArrayList<>();
