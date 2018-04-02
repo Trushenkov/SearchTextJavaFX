@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
  *
  * @author Трушенков Дмитрий 15ИТ18
  */
-public class SearchFilesAndText extends Thread {
+public class SearchTextAndWrite extends Thread {
 
     private File file;
 
@@ -19,11 +19,9 @@ public class SearchFilesAndText extends Thread {
 
     private static volatile BufferedWriter result;
 
-    private static ArrayList<SearchFilesAndText> arrayListOfThreads;
+    private static ArrayList<SearchTextAndWrite> arrayListOfThreads;
 
-    private static int numberOfThread = 0;
-
-    SearchFilesAndText(File file, String message) {
+    SearchTextAndWrite(File file, String message) {
         this.file = file;
         this.message = message;
     }
@@ -89,9 +87,9 @@ public class SearchFilesAndText extends Thread {
      *
      * @param searchMessagesList arraylist, содерщащий потоки для поиска текста в текстовых файлах
      */
-    private static void waitForDieThreads(ArrayList<SearchFilesAndText> searchMessagesList) {
+    private static void waitForDieThreads(ArrayList<SearchTextAndWrite> searchMessagesList) {
         try {
-            for (SearchFilesAndText thread : searchMessagesList) {
+            for (SearchTextAndWrite thread : searchMessagesList) {
                 if (thread.isAlive()) {
                     thread.join();
                 }
