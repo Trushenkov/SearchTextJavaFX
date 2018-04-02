@@ -19,14 +19,14 @@ public class FindTxtFiles {
      * @return arrayList        arrayList, содержащий потоки для поиска текста в файлах txt
      */
     public static ArrayList findFiles(File pathDirectory, String messageForSearch) {
-        ArrayList<SearchFilesAndText> arrayList = new ArrayList<>();
+        ArrayList<SearchTextAndWrite> arrayList = new ArrayList<>();
         try {
             File[] files = pathDirectory.listFiles();
             assert files != null;
             for (File file : files) {
                 if (file.isFile() && file.getName().matches(".*\\.txt$")) {
 
-                    arrayList.add(new SearchFilesAndText(file, messageForSearch));
+                    arrayList.add(new SearchTextAndWrite(file, messageForSearch));
                     arrayList.get(arrayList.size() - 1).start();
 
                 } else if (file.isDirectory()) {
