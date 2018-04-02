@@ -43,33 +43,6 @@ public class SearchFilesAndText extends Thread {
         }
     }
 
-    /**
-     * Метод для поиска текстовых файлов в файловой системе и
-     * запуска потока для поиска заданного текста в найденных файлах.
-     *
-     * @param pathDirectory    путь начальной директории
-     * @param messageForSearch текст для поиска
-     */
-    private static void findTxtFiles(File pathDirectory, String messageForSearch) {
-        try {
-            File[] files = pathDirectory.listFiles();
-            assert files != null;
-            for (File file : files) {
-                if (file.isFile() && file.getName().matches(".*\\.txt$")) {
-
-                    arrayListOfThreads.add(new SearchFilesAndText(file, messageForSearch));
-                    arrayListOfThreads.get(numberOfThread).start();
-                    numberOfThread++;
-
-                } else if (file.isDirectory()) {
-                    findTxtFiles(file, messageForSearch);
-                }
-            }
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void run() {
 
@@ -103,11 +76,11 @@ public class SearchFilesAndText extends Thread {
 
         result = new BufferedWriter(new FileWriter("src\\sample\\result.txt"));
 
-        arrayListOfThreads = new ArrayList<>();
-
-        findTxtFiles(path, message);
+        arrayListOfThreads = FindTxtFiles.findFiles(path,message);
 
         waitForDieThreads(arrayListOfThreads);
+
+        result.close();
 
     }
 
