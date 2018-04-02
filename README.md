@@ -16,8 +16,10 @@
 Класс, в котором обрабатываются события взаимодействия пользователя и интерфейса программы <br>
 ### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/Main.java"> Main.java </a> 
 Главный класс для запуска программы.
-### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/SearchFilesAndText.java"> SearchFilesAndText.java </a>
-Потоковый класс для поиска текстовых файлов, начиная с указанной директории, используя регулярное выражение. Также в этом классе реализован поиск заданного текста в найденных текстовых файлах и запись информации в результирующий файл.<br>
+### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/SearchTextAndWrite.java"> SearchTextAndWrite.java </a>
+Потоковый класс для поиска заданного текста в найденных текстовых файлах и записи информации в результирующий файл.<br>
 ### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/result.txt"> result.txt </a>
 Результирующий файл. Хранит информацию о найденном тексте в виде:
 1. путь к файлу,в котором найден текст; 2.исходный текст для поиска; 3. номер строки, в которой он найден.
+### <a href="https://github.com/Trushenkov/SearchTextJavaFX/blob/master/src/sample/FindTxtFiles.java"> FindTxtFiles.java </a> 
+Класс, в котором реализован поиск текстовых файлов, начиная с указанной директории и запуск потоков для поиска текста в найденных файлах.
